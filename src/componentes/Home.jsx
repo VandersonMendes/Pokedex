@@ -1,22 +1,25 @@
 import React, { useState } from "react";
-import {PERSONAGENS_GET} from "../api";
+import {API_BASE} from "../api";
 import styles from "../assets/css/Home.module.css";
-import useFetch from "../Hooks/UseFetch";
+import axios from "axios"
 import CardPokemon from "./CardPokemon";
 const Home = () => {
     const [pokemons, setPokemons] = useState();
-    const {loading, error, request, data} = useFetch();
     React.useEffect(() =>{
-        const {url, options} = PERSONAGENS_GET()
-        request(url, options)
-
+        getPokemons()
     },[])
-    console.log(data)
+    const getPokemons = () => {
+        axios
+        .get(API_BASE + 'pokemon?limit=100&offset=0')
+        .then((resp) => setPokemons(resp.data.results))
+        .catch((err) => console.log(err))
+    }
+    
     return(
-        <div className={styles.GridLayout}>
-            {data.results && data.results.map((pokemon) =>
+        <div className={styles.gridPokemon}>
+            {pokemons && pokemons.map((pokemon) =>
                 <div>
-                    <CardPokemon name={pokemon.name}/>
+                    <CardPokemon name={pokemon.name} url={pokemon.url} />
                 </div>
             )}
         </div>

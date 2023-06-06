@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from "../assets/css/SideBar.module.css"
 const SideBar = () => {
   return (
-    <div>SideBar</div>
+    <div className={styles.sideBar}>SideBar</div>
   )
 }
 

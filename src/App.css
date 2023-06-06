@@ -1,3 +1,15 @@
-
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.column{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header{
+    text-align: center;
+    margin: 2rem 0;
+}
 
 
