@@ -1,15 +1,26 @@
+@font-face {
+    font-family:"Poppis";
+    src: url("./assets/fonts/Poppins-Medium.ttf");
+}
 .container{
     max-width: 1200px;
     margin: 0 auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.column{
-    display: flex;
-    justify-content: space-evenly;
+body{
+    background-color: rgb(238, 237, 237);
 }
-.header{
-    text-align: center;
-    margin: 2rem 0;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3{
+    font-family: "Poppis";
+}
+
+img{
+    width: 100%;
+    height: 100%;
 }
 
 

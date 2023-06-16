@@ -1,0 +1,310 @@
+.cardFlex {
+    border: 1px solid rgba(204, 123, 18, 0.292);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.265) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-bottom: none;
+    border-radius: 7px;
+    background-color: white;
+    margin: 2rem auto;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    width: 80%;
+    gap: calc(7% - 2rem);
+    position: relative;
+}
+
+.img {
+    border: 3px solid rgba(36, 35, 35, 0.858);
+    padding:4rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+    text-align: center;
+
+}
+.img:hover{
+    opacity: 0.9;
+    transition: 200ms ease-in-out;
+}
+.img img{
+    width: calc(5vw + 6em);
+    text-align: center;
+}
+.id {
+    color: rgb(52, 51, 51);
+    font-size: 1.8rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    font-family: "Poppis";
+}
+
+.card .status {
+    margin-left: 2rem;
+    color: #0c0c0c;
+    -webkit-box-shadow: -15px 0px 57px -8px rgba(148, 148, 148, 1);
+    -moz-box-shadow: -15px 0px 57px -8px rgba(148, 148, 148, 1);
+    box-shadow: -15px 0px 57px -8px rgba(148, 148, 148, 1);
+    border-left: 1px solid black;
+}
+
+.name {
+    border-radius: 20px;
+}
+
+.name h1 {
+    color: #090808;
+    font-size: 2.8rem;
+}
+.name h2 {
+    color: #242424cd;
+    font-size: 2.8rem;
+}
+.voltar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 6vw;
+    padding: 0.4rem;
+    border-radius: 5px;
+    outline: none;
+    border-color: #5d3434;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+    background-color: rgb(120, 243, 49);
+}
+
+.voltar:hover {
+    transform: translateX(-2rem);
+    color: #fff;
+    transition: 200ms ease-in-out;
+    background-color: rgb(243, 78, 49);
+}
+
+.voltar img {
+    width: 15%;
+}
+
+.voltar span {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.typeFlex {
+    display: flex;
+    gap: 1vw;
+    margin: 1rem;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.typeFlex span {
+    border: 1px solid gray;
+    padding: 0.1rem 1rem;
+    border-radius: 5px;
+    font-family: "Poppis";
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+
+.caracteristicas {
+    display: flex;
+    gap: 1vw;
+    cursor: pointer;
+}
+
+.caracteristicas span {
+    border: 1px solid rgb(254, 179, 179);
+    padding: 0.3rem 0rem;
+    border-radius: 5px;
+    font-family: "Poppis";
+    font-weight: 600;
+    width: 10rem;
+    text-align: center;
+}
+
+.caracteristicas h3 {
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.stats{
+    width: 100%;
+}
+.abilities,
+.weakness,
+.estatisticasButton{
+    margin: 1rem;
+}
+.abilities li{
+    list-style: none;
+    font-family: "Poppis";
+    background-color: rgb(21, 170, 59);
+    color: #ffff;
+    padding: 0.4rem 1rem;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 255, 149);
+    cursor: pointer;
+}
+.abilities ul,
+.weakness ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+.weakness li{
+    list-style: none;
+    font-family: "Poppis";
+    background-color: rgb(255, 56, 1);
+    color: #ffff;
+    padding: 0.4rem 1rem;
+    border-radius: 10px;
+    border: 2px solid rgb(92, 1, 1);
+    cursor: pointer;
+}
+.estatisticasButton button{
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-family: "Poppis";
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #100f0f;
+    display: flex;
+    background-color: rgb(95, 153, 255);
+    align-items: flex-end;
+    gap: 10px;
+    transition: 200ms ease-in;
+    border: 2px solid rgb(0, 0, 84);
+}
+.estatisticasButton button img{
+    width: 12%;
+    height: 20%;
+}
+.estatisticas{
+    display: flex;
+    justify-content: center;
+}
+
+.stats{
+    margin: 2rem auto;
+    border: 2px solid rgb(133, 130, 130);
+    background-color:#bebdc374 ;
+    padding: 1rem;
+    width: 70%;
+    border-radius: 20px;
+}
+.stats li{
+    list-style: none;
+    display: grid;
+    margin-bottom: 1rem;
+}
+.progress{
+    width: 100%;
+    background-color: rgba(243, 163, 241, 0.454);
+    align-items: center;
+    border-radius: 10px;
+}
+.progressWidth{
+    height: 20px;
+}
+.statsName{
+    font-family: "Poppis";
+    font-size: 1.3rem;
+}
+
+    /* background-color: rgb(58, 182, 213);
+    border-color: #006ba1;
+    color: #000000;
+    font-weight: 800; */
+
+
+@media (max-width:1200px) {
+    
+}
+@media (max-width:800px) {
+    .cardFlex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1vw;
+        padding: 0 0 3rem 0;
+
+    }
+    .img{
+        padding:2rem;
+    }
+    .id {
+        color: white;
+        right: 10px;
+    }
+    .img{
+        border-radius: 7px;
+        border-bottom-left-radius: 0 ;
+        border-bottom-right-radius: 0 ;
+    }
+    .name,
+    .typeFlex,
+    .caracteristicas{
+        margin-left: 1.4rem;
+    }
+    .caracteristicas{
+        font-size: 0.9rem;
+    }
+    .estatisticas li{
+        width: 80vw;
+    }
+    .statsName{
+        font-family: "Poppis";
+        font-size: 1rem;
+    }
+}   
+@media (max-width:600px) {
+    .id {
+        font-size: 1.4rem;
+    }
+    .name h1{
+        font-size: 2rem;
+    }
+    .progressWidth{
+        height: 15px;
+    }
+    .voltar img{
+        width: 10%;
+    }
+    .voltar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 6vw;
+        padding: 0.4rem;
+        border-radius: 5px;
+        outline: none;
+        border-color: #5d3434;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+        background-color: rgb(120, 243, 49);
+    }
+    .voltar span{
+        font-size: 0.8rem;
+    }
+    .abilities li,
+    .weakness li{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width:400px) {
+    .name h1{
+        font-size: 1.6rem;
+    }
+    .id {
+        font-size: 1.1rem;
+    }
+
+}

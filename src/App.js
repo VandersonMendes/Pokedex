@@ -1,17 +1,21 @@
 import './App.css';
 import "./App.css"
 import Home from './componentes/Home'
-import SideBar from './componentes/SideBar';
-import Header from "./componentes/Header";
-import Search from "./componentes/Search"
+import Header from './componentes/Header';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import {AppProvider} from './componentes/context/ContextApp'
+import Modal from './componentes/Modal';
 function App() {
   return (
     <div className='App'>
+      <BrowserRouter>
+      <AppProvider>
         <div className='container'>
-        <Header />
-        <Search />
-        <Home />
+          <Header />
+          <Home/>
         </div>
+        </AppProvider>
+      </BrowserRouter>
     </div>
   )
 }
