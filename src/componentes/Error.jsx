@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAppProvider } from './context/ContextApp'
+import { useAppProvider } from '../context/ContextApp'
 const Error = ({error}) => {
   return (
     <div style={{textAlign:'center', height:'100vh'}}>

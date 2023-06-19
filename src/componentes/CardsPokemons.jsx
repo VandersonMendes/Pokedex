@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import styles from "../assets/css/CardsPokemon.module.css";
 import axios from 'axios';
-import { useAppProvider } from './context/ContextApp';
+import { getPokemon, API_BASE } from '../api';
+import { useAppProvider } from '../context/ContextApp';
 import Error from './Error';
-const CardsPokemons = ({pokemons}) => {
-  const {setError, error, setLoading, loading} = useAppProvider()
-  const [pokemon, setPokemon] = useState(null)
+import Pagination from './Pagination';
+const CardsPokemons = () => {
+  const {setError, error, setLoading, loading, page, pokemons} = useAppProvider()
+  const [pokemon, setPokemon] = useState();
   React.useEffect(() =>{
-    setLoading(true)
-    setLoading(false)
-    pokemons && pokemons.map((pok) => setPokemon(pok))
-  },[]);
+    fetchPokemon()
+  },[page])
+  const fetchPokemon= async () =>{
+    pokemons && pokemons.map((pokemon) =>  axios.get(pokemon.url).then((resp) =>  setPokemon(resp.data.id)))
+  }
 console.log(pokemon)
-  if(error) return <Error error={'Página não encontrada'} />
-  return (
-    <section className={styles.pokemon}>
-      <div>
-        <h1>{}</h1>
-      </div>
-    </section>
+  return(
+    <div >
+      <h1></h1>
+    <Pagination />
+    </div>
   )
 }
-
 export default CardsPokemons

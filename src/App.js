@@ -3,7 +3,7 @@ import "./App.css"
 import Home from './componentes/Home'
 import Header from './componentes/Header';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import {AppProvider} from './componentes/context/ContextApp'
+import {AppProvider} from './context/ContextApp'
 import Modal from './componentes/Modal';
 function App() {
   return (

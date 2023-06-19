@@ -1,42 +1,47 @@
 import React, { useState } from "react";
-import styles from "../assets/css/Home.module.css";
 import axios from "axios"
 import CardsPokemons from "./CardsPokemons";
 import CardPokemon from "./CardPokemon";
-import Header from "./Header";
 import Loading from "./Loading";
-import { API_BASE } from "../api"
-import { useAppProvider } from "./context/ContextApp"
+import { API_BASE, getPokemons } from "../api"
+import { useAppProvider } from "../context/ContextApp"
 import Error from "./Error";
 const Home = () => {
-    const { loading, setLoading, valuePokemon,setError, error } = useAppProvider();
+    const { loading, setLoading, valuePokemon, setError, error, page, setPage, setTotalPages, pokemons, setPokemons } = useAppProvider();
     const [pokemon, setPokemon] = useState(null);
-    const [pokemons, setPokemons] = useState(null);
     React.useEffect(() => {
-        getPokemons()
         setLoading(true)
-        async function getDetailsPokemons() {
-            await valuePokemon && valuePokemon.map((pokemon) => {
-                axios.get(`${API_BASE}pokemon/${pokemon}`).then((resp) => setPokemon(resp.data)).catch((err) => setError(true))
-            })
-        }
-        setLoading(false)
         getDetailsPokemons();
+        setLoading(false)
     }, [valuePokemon]);
-    const getPokemons = () => {
-        var endpoits = [];
-        for (var i=1; i < 50; i++){
-            endpoits.push(`${API_BASE}pokemon/${i}/`)
-        }
-        axios.all(endpoits.map((endpoit) => axios.get(endpoit))).then((resp)=> setPokemons(resp))
+    async function getDetailsPokemons() {
+        await valuePokemon && valuePokemon.map((pokemon) => {
+            axios.get(`${API_BASE}pokemon/${pokemon}`).then((resp) => setPokemon(resp.data)).catch(() => setError(true))
+        })
     }
+
+    React.useEffect(() => {
+        fetchPokemons()
+    }, [page])
+    const itensPerPage = 10;
+    const fetchPokemons = async () => {
+        try {
+            setLoading(true);
+            const data = await getPokemons(itensPerPage, itensPerPage * page);
+            setPokemons(data.data.results)
+            setLoading(false)
+        } catch (error) {
+            console.log("fetchPokemons error: ", error);
+            setLoading(false)
+        }
+    };
     if (loading) return <Loading />
-    if(error) return <Error error="Error 404 [ Pagina não encontrada ]"/>
+    if (error) return <Error error="Error 404 [ Pagina não encontrada ]" />
     return (
         <div>
             {pokemon ? (<CardPokemon pokemon={pokemon} />)
                 : (
-                    <CardsPokemons pokemons={pokemons} />
+                    <CardsPokemons />
                 )}
         </div>
 
