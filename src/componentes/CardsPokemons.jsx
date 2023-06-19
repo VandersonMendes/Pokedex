@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import styles from "../assets/css/CardsPokemon.module.css";
 import axios from 'axios';
-import { getPokemon, API_BASE } from '../api';
+import { getPokemon } from '../api';
 import { useAppProvider } from '../context/ContextApp';
 import Error from './Error';
 import Pagination from './Pagination';
+import { createContextState } from 'react-create-context';
 const CardsPokemons = () => {
   const {setError, error, setLoading, loading, page, pokemons} = useAppProvider()
-  const [pokemon, setPokemon] = useState();
+  const [pokemon, setPokemon] = useState(null);
   React.useEffect(() =>{
     fetchPokemon()
-  },[page])
+  },[pokemons])
   const fetchPokemon= async () =>{
-    pokemons && pokemons.map((pokemon) =>  axios.get(pokemon.url).then((resp) =>  setPokemon(resp.data.id)))
+    const data = pokemons && pokemons.map((url) => getPokemon(url.url))
+    console.log(data)
   }
-console.log(pokemon)
   return(
     <div >
       <h1></h1>

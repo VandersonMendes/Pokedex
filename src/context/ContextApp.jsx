@@ -10,7 +10,7 @@ export function AppProvider({ children }) {
   const [error, setError] = useState(false);
   const [pokemons, setPokemons] = useState(null)
   return (
-    <AppContext.Provider value={{ loading, setLoading, setValuePokemon, valuePokemon, error, setError, page, setPage, totalPages, setTotalPages, pokemons, setPokemons}}>
+    <AppContext.Provider value={{ loading, setLoading, setValuePokemon, valuePokemon, error, setError, page, setPage, totalPages, setTotalPages, pokemons, setPokemons,}}>
       {children}
     </AppContext.Provider>
   );

@@ -19,7 +19,6 @@ const Home = () => {
             axios.get(`${API_BASE}pokemon/${pokemon}`).then((resp) => setPokemon(resp.data)).catch(() => setError(true))
         })
     }
-
     React.useEffect(() => {
         fetchPokemons()
     }, [page])
@@ -41,7 +40,7 @@ const Home = () => {
         <div>
             {pokemon ? (<CardPokemon pokemon={pokemon} />)
                 : (
-                    <CardsPokemons />
+                    <CardsPokemons/>
                 )}
         </div>
 
