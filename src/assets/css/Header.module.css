@@ -10,6 +10,10 @@
 .header a img{
     width: 50%;
 }
+.Search{
+    position: relative;
+}
+
 @media (max-width:500px) {
     .header a img{
         width: 8rem;

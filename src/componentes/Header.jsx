@@ -5,8 +5,8 @@ import styles from "../assets/css/Header.module.css"
 const Header = ({filteredPokemon}) => {
   return (
     <div className={styles.header}>
-        <a href="/"><img src={HeaderImg} alt="" /></a>
-        <Search filteredPokemon={filteredPokemon}></Search>
+        <a href="/"><img src={HeaderImg} alt="Pokedex" /></a>
+        <Search filteredPokemon={filteredPokemon} className={styles.Search}></Search>
     </div>
   )
 }

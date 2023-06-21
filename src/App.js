@@ -12,7 +12,10 @@ function App() {
       <AppProvider>
         <div className='container'>
           <Header />
-          <Home/>
+          <Routes>
+          <Route path='/' element={<Home/>}/>
+          </Routes>
+       
         </div>
         </AppProvider>
       </BrowserRouter>

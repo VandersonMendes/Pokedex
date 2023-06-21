@@ -1,0 +1,54 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 2rem;
+}
+.card{
+    border: 2px solid rgba(7, 7, 7, 0.219);
+    border-radius: 15px;
+    width: 100%;
+    cursor: pointer;
+    transition: 200ms all;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.295);
+    box-shadow: rgba(4, 29, 75, 0.329) 0px 2px 5px;
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: 200ms ease-in-out;
+}
+.img{
+    text-align: center;
+}
+.img img{
+    width: 13rem;
+    height: 13rem;
+    max-width: 20rem;
+    max-height: 10rem;
+    padding: 1.5rem 0.5rem;
+    margin-top:1rem ;
+    background-color: rgba(124, 124, 124, 0.226);
+    border-radius: 200px;
+}
+.id{
+    font-size: 1.1rem;
+    border-radius: 20000000px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    
+}
+.text{
+    padding: 1rem 0rem 0rem 1rem;
+}
+.typeFlex{
+    display: flex;
+    gap: 1rem;
+}
+.typeFlex span{
+    border: 1px solid rgba(0, 0, 0, 0.308);
+    padding: 0.1rem 0.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+}

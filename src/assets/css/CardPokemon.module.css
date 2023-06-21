@@ -1,3 +1,15 @@
+.animeLeft {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: animeLeft 0.5s forwards;
+  }
+  
+  @keyframes animeLeft {
+    to {
+      opacity: 1;
+      transform: initial;
+    }
+  }
 .cardFlex {
     border: 1px solid rgba(204, 123, 18, 0.292);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.265) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -213,16 +225,25 @@
 }
 .progressWidth{
     height: 20px;
+    border-radius: 10px;
 }
 .statsName{
     font-family: "Poppis";
     font-size: 1.3rem;
+    transition: 1s all;
 }
-
-    /* background-color: rgb(58, 182, 213);
-    border-color: #006ba1;
-    color: #000000;
-    font-weight: 800; */
+.animeBottom {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: animeLeft 0.9s forwards;
+  }
+  
+  @keyframes animeLeft {
+    to {
+      opacity: 1;
+      transform: initial;
+    }
+  }
 
 
 @media (max-width:1200px) {

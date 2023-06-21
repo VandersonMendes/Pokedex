@@ -12,8 +12,7 @@ const Pagination = () => {
             <button onClick={() => setPage(page - 1)}>Página Anterior</button>
         ) }
         <button onClick={() => setPage(page + 1)}>Proxima Página</button>
-       
-
+      
     </div>
   )
 }

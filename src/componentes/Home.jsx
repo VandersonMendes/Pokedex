@@ -1,33 +1,45 @@
 import React, { useState } from "react";
-import axios from "axios"
 import CardsPokemons from "./CardsPokemons";
 import CardPokemon from "./CardPokemon";
 import Loading from "./Loading";
-import { API_BASE, getPokemons } from "../api"
+import {getPokemons, getPokemon } from "../api"
 import { useAppProvider } from "../context/ContextApp"
 import Error from "./Error";
+import { Link, NavLink} from 'react-router-dom';
 const Home = () => {
-    const { loading, setLoading, valuePokemon, setError, error, page, setPage, setTotalPages, pokemons, setPokemons } = useAppProvider();
+    const { loading, setLoading, valuePokemon, setError, error, page, setPokemons } = useAppProvider();
     const [pokemon, setPokemon] = useState(null);
     React.useEffect(() => {
         setLoading(true)
-        getDetailsPokemons();
+        getPokemonSearch();
         setLoading(false)
     }, [valuePokemon]);
-    async function getDetailsPokemons() {
-        await valuePokemon && valuePokemon.map((pokemon) => {
-            axios.get(`${API_BASE}pokemon/${pokemon}`).then((resp) => setPokemon(resp.data)).catch(() => setError(true))
-        })
+
+    const getPokemonSearch = async ()=>{
+        try{
+            const data = await  valuePokemon.map((search) => getPokemon(search)); 
+            const result = await Promise.all(data)
+            result && result.map((resp) => setPokemon(resp.data))
+            setError(false)
+        }catch(err){
+            setError(true)
+        }finally{
+            setError(false)
+        }
     }
     React.useEffect(() => {
         fetchPokemons()
     }, [page])
-    const itensPerPage = 10;
     const fetchPokemons = async () => {
         try {
             setLoading(true);
-            const data = await getPokemons(itensPerPage, itensPerPage * page);
-            setPokemons(data.data.results)
+            const data = await getPokemons(9, 7 * page);
+            const promises= data.data.results.map(async (pokemon) => {
+                return await getPokemon(pokemon.name)
+            })
+            const results = await Promise.all(promises)
+            setPokemons(results)
+      
             setLoading(false)
         } catch (error) {
             console.log("fetchPokemons error: ", error);
@@ -37,10 +49,10 @@ const Home = () => {
     if (loading) return <Loading />
     if (error) return <Error error="Error 404 [ Pagina não encontrada ]" />
     return (
-        <div>
-            {pokemon ? (<CardPokemon pokemon={pokemon} />)
+        <div className="animeLeft">
+            {pokemon ? ( <CardPokemon pokemon={pokemon} />)
                 : (
-                    <CardsPokemons/>
+                     <CardsPokemons />
                 )}
         </div>
 

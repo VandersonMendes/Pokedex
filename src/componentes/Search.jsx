@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import styles from "../assets/css/Seach.module.css";
 import { useAppProvider } from '../context/ContextApp';
-import Lupa from "../assets/img/lupa.svg"
 const Search = () => {
-  const {setValuePokemon, valuePokemon} = useAppProvider()
-  const [value, setValue] = useState('');
+  const {setValuePokemon} = useAppProvider();
+  const [value, setValue] = useState();
   function handleChange({target}){
      setValue(target.value)
   }
