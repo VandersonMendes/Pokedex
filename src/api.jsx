@@ -11,6 +11,7 @@ export const getPokemon = async (name) => {
 export const getColorPokemon = async (url) => {
     try {
         const  response = await axios.get(url);
+        console.log(url)
         return  response
     } catch (error) {
         console.log("error: ", error)

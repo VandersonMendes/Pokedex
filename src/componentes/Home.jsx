@@ -5,7 +5,6 @@ import Loading from "./Loading";
 import {getPokemons, getPokemon } from "../api"
 import { useAppProvider } from "../context/ContextApp"
 import Error from "./Error";
-import { Link, NavLink} from 'react-router-dom';
 const Home = () => {
     const { loading, setLoading, valuePokemon, setError, error, page, setPokemons } = useAppProvider();
     const [pokemon, setPokemon] = useState(null);
