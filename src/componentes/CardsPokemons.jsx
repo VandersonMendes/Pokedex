@@ -3,16 +3,23 @@ import React, { useState } from 'react';
 import styles from "../assets/css/CardsPokemons.module.css"
 import Pagination from './Pagination';
 import Modal from "./Modal"
+import {getPokemon } from "../api"
+import { useParams } from 'react-router-dom';
 const CardsPokemons = () => {
-  const { pokemons,setModal, modal} = useAppProvider(); 
-  function handleModal(event){
+  const { pokemons, setModal, modal} = useAppProvider();
+  const [dataPokemon, setPokemonData] =useState(null)
+  const {loading, setLoading} = useAppProvider()
+  const handleModal = async (pokemon) =>{
     setModal(true)
+    const data = await  getPokemon(pokemon); 
+    setPokemonData(data.data)
+
   }
   return (
         <section>
-          <div className={styles.grid}>
+          <ul  className={styles.grid}>
             {pokemons && pokemons.map((pokemon) => (
-              <div className={styles.card} onClick={handleModal}>
+              <li key={pokemon.data.name} className={styles.card} onClick={() => handleModal(pokemon.data.name)}>
                 <span className={styles.id}>#{pokemon.data.id}</span>
                 <div className={styles.img}>
                   <img src={pokemon.data.sprites.other.dream_world.front_default} alt={pokemon.data.id} />
@@ -30,11 +37,16 @@ const CardsPokemons = () => {
                     )}
                   </div>
                 </div>
-                {modal && <Modal name={pokemon.name} />}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
+
           <Pagination />
+          <div>
+            {modal &&  <Modal data={dataPokemon}/> }
+           
+          </div>    
+
         </section>
   )
 }

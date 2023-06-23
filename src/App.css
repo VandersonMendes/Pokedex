@@ -8,6 +8,7 @@
 }
 body{
     background-color: rgb(238, 237, 237);
+    overflow-x: hidden;
 }
 
 *{
@@ -26,6 +27,9 @@ img{
   opacity: 0;
   transform: translateX(-20px);
   animation: animeLeft 1s forwards;
+}
+li{
+  list-style: none;
 }
 
 @keyframes animeLeft {

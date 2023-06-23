@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "../assets/css/CardPokemon.module.css";
 import SetaVoltar from "../assets/img/icons8-voltar-50.png"
-import { API_BASE } from "../api";
-
 import axios from "axios";
 import IconeGrafico from "../assets/img/icons8-gráfico-48 (1).png"
+
 const CardPokemon = ({ pokemon }) => {
   const [color, setColor] = useState(null);
   const [weakness, setWeakness] = useState(null);
@@ -78,7 +77,7 @@ const CardPokemon = ({ pokemon }) => {
     setButtonStats(!buttonStats)
   }
   return (
-      <section className={`${styles.ContainerCard} ${styles.animeLeft}`}>
+      <section className={`${styles.ContainerCard} ${styles.animeLeft} `}>
         <div className={styles.cardFlex}>
           <div style={{ backgroundColor: `${color}` }} className={styles.img}>
             <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.id} />

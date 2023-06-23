@@ -16,13 +16,14 @@
     border-bottom: none;
     border-radius: 7px;
     background-color: white;
-    margin: 2rem auto;
     padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr ;
     width: 80%;
     gap: calc(7% - 2rem);
     position: relative;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
 .img {
