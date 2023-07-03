@@ -6,46 +6,24 @@
 
 
 <h2 align="center">
-  <a href="https://dados-da-nasa-frontend.herokuapp.com/" target="_blank">See the site</a>
+  <a href="https://pokedex-blond-psi.vercel.app/" target="_blank">See the site</a>
 </h2>
 
 
 ## 🧾 About
 
-**Dados da Nasa** is a project where I learned a lot (even now I learned from this README.md) and this is a project that consumes the NASA's APIs.
+**POKEDEX** é um projeto onde vc consome API [pokedex](https://pokeapi.co/), onde vc pode consultar os pokemons pelo name, ou pelo id e mais sobre eles.
 
 ## 🔧 Tools
 
-- [Node](https://nodejs.org) 💚
-- [React](https://reactjs.org)
-- [React Native](https://reactnative.dev)
+- [React](https://reactjs.org) 💙
+- [Vite ](https://vitejs.dev/).
+- [axios](https://axios-http.com/ptbr/docs/intro)
+- [HTML]
+- [CSS]
 
-## 👨‍💻 How to Setup
 
-```bash
-  # Clone the project
-  $ git clone https://github.com/Ezever/Projeto-NASA.git
-```
-```bash
-  # Enter directory
-  $ cd Projeto-NASA
-```
 
-```bash
-  # Install the dependencies, if you use npm
-  $ npm install
-```
-<p align="center">or</p>
 
-```bash
-  # Install the dependencies, if you use yarn
-  $ yarn
-```
 
-## 📝 License
-
-This project is under the MIT license. See the file <a href="https://github.com/Ezever/Projeto-NASA/blob/master/LICENSE">LICENCE</a> for more details.
-
----
-
-<p align="center">Done with 💙 by João Victor Ramalho Alves</p>
+<p align="center">Done with 💙 by <a href="https://vandersonmendes.github.io/Portf-lio/">Vanderson Dias Mendes</a></p>
