@@ -1,6 +1,6 @@
 <h1 align="center">
   <img 
-    src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+    src="https://vandersonmendes.github.io/Portf-lio/assets/img/Projeto%20Pokedex.png"
   />
 </h1>
 
