@@ -19,8 +19,8 @@
 - [React](https://reactjs.org) 💙
 - [Vite ](https://vitejs.dev/).
 - [axios](https://axios-http.com/ptbr/docs/intro)
-- [HTML]
-- [CSS]
+- HTML
+- CSS
 
 
 
