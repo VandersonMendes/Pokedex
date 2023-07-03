@@ -2,14 +2,8 @@
   <img 
     src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
   />
-  <p>Project NASA 🚀</p>
 </h1>
 
-<h1>
-  <img 
-    src="https://ik.imagekit.io/dwei78ukbe/nasaGIF_kz_H03oo4.gif"
-  />
-</h1>
 
 <h2 align="center">
   <a href="https://dados-da-nasa-frontend.herokuapp.com/" target="_blank">See the site</a>
